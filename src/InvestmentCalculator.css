@@ -1,12 +1,13 @@
-
 .form {
+  max-width: 600px;
+  margin: 20px auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.2px;
-  padding: 12px;
+  gap: 16px;
+  padding: 20px;
   border-radius: 20px;
   background: rgba(239, 182, 241, 0.322);
-  box-shadow: 3 8px 32px 0 rgba(107, 28, 160, 0.37);
+  box-shadow: 0 8px 32px 0 rgba(107, 28, 160, 0.37);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(116, 27, 81, 0.2);
@@ -14,17 +15,11 @@
 }
 
 @keyframes formGlow {
-  0% {
-    box-shadow: 0 0 12px rgba(255, 0, 150, 0.2),
-                0 0 32px rgba(0, 200, 255, 0.2);
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(255, 0, 150, 0.2), 0 0 32px rgba(0, 200, 255, 0.2);
   }
   50% {
-    box-shadow: 0 0 24px rgba(255, 0, 150, 0.4),
-                0 0 48px rgba(0, 200, 255, 0.4);
-  }
-  100% {
-    box-shadow: 0 0 12px rgba(255, 0, 150, 0.2),
-                0 0 32px rgba(0, 200, 255, 0.2);
+    box-shadow: 0 0 24px rgba(255, 0, 150, 0.4), 0 0 48px rgba(0, 200, 255, 0.4);
   }
 }
 
@@ -67,7 +62,9 @@ input:focus, select:focus {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
+
 button {
   padding: 12px 20px;
   border: none;
@@ -92,13 +89,14 @@ button:hover {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(39, 12, 12, 0.2);
-  padding: 1px;
+  padding: 16px;
   border-radius: 12px;
   color: #fff;
   font-size: 16px;
   box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+}
 
-}.result p {
+.result p {
   margin: 6px 0;
 }
 
@@ -108,5 +106,20 @@ button:hover {
   font-weight: bold;
 }
 
+/* 🌐 Responsive Design */
+@media (max-width: 600px) {
+  .form {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
 
+  .full-width,
+  .buttons,
+  .result {
+    grid-column: span 1;
+  }
 
+  button {
+    width: 100%;
+  }
+}
