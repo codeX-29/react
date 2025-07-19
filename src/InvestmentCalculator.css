@@ -1,0 +1,112 @@
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.2px;
+  padding: 12px;
+  border-radius: 20px;
+  background: rgba(239, 182, 241, 0.322);
+  box-shadow: 3 8px 32px 0 rgba(107, 28, 160, 0.37);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(116, 27, 81, 0.2);
+  animation: formGlow 5s ease-in-out infinite;
+}
+
+@keyframes formGlow {
+  0% {
+    box-shadow: 0 0 12px rgba(255, 0, 150, 0.2),
+                0 0 32px rgba(0, 200, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(255, 0, 150, 0.4),
+                0 0 48px rgba(0, 200, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 12px rgba(255, 0, 150, 0.2),
+                0 0 32px rgba(0, 200, 255, 0.2);
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #491717;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+input, select {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #0a0a0a;
+  outline: none;
+  transition: 0.3s ease-in-out;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+input:focus, select:focus {
+  box-shadow: 0 0 10px #00c3ff, 0 0 20px #ff00cc;
+  border: 1px solid #fff;
+  background: rgba(235, 195, 195, 0.2);
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.buttons {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00c3ff, #ff00cc);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ff00cc, #00c3ff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 0, 255, 0.4);
+}
+
+.result {
+  grid-column: span 2;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(39, 12, 12, 0.2);
+  padding: 1px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+
+}.result p {
+  margin: 6px 0;
+}
+
+.result p:nth-child(3),
+.result p:nth-child(5) {
+  color: rgb(241, 243, 241);
+  font-weight: bold;
+}
+
+
+
